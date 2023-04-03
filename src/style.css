@@ -1,0 +1,14 @@
+h1
+{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size:large;
+    color : blue;
+}
+
+nav li
+{
+    list-style: none;
+    display: inline;
+    padding : 2px 12px;
+    padding-bottom: 33px;
+}
