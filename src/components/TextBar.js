@@ -13,6 +13,22 @@ export default function TextBar() {
         setText(newText);
     }
 
+    let Capitalize = ()=>{
+      let newText = text.split(" ").map(str=>str.charAt(0).toUpperCase()+str.slice(1)).join(" ");
+      setText(newText);
+  }
+
+    let trim = ()=>{
+      let newText = text.trim();
+      setText(newText);
+  }
+
+    let clear = ()=>{
+    
+      setText('');
+  }
+
+
     
 
     let Handle =(event)=>{
@@ -20,15 +36,28 @@ export default function TextBar() {
     }
 
   return (
-    // 
+    //
+    <> 
      <div> 
+      <h4>Enter Your Text Below</h4>
     <div className="md-3">
-      <textarea className="form-control" id="MyBox" rows="10" cols="10" value={text} onChange={Handle} style={{margin:44}}></textarea>
-    </div>
-    <div className="container">
-    <button type="button" className="btn btn-primary" style={{ marginTop: '20px' }} onClick={UpperCase}>convert2UpperCase</button><br></br>
-    <button type="button" className="btn btn-danger" style={{ marginTop: '20px' }} onClick={LowerCase}>convert2LowerCase</button>
-    </div>
+      <textarea className="form-control" id="MyBox" rows="10" cols="10" value={text} onChange={Handle} style={{margin:0}}></textarea>
+    </div> 
+    <button type="button" className="btn btn-primary my-3 mx-1"  onClick={UpperCase}>convert2UpperCase</button>
+    <button type="button" className="btn btn-danger  mx-1" onClick={LowerCase}>convert2LowerCase</button>
+    <button type="button" className="btn btn-info"   onClick={Capitalize}>capitalize</button>
+    <button type="button" className="btn btn-secondary mx-1"   onClick={clear}>Clear</button>
+    <button type="button" className="btn btn-warning mx-1"   onClick={trim}>Trim</button>
   </div>
+
+      <div>
+      <h4>No of Character  : {text.length}</h4>
+      <h4>The Length of the words : {text.split(" ").length}</h4>
+      <h4>Preview Text</h4>
+      {text}
+      </div>
+
+
+  </>
   )
 }

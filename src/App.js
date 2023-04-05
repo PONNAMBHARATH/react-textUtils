@@ -8,7 +8,7 @@ function App() {
   return (
     <>
         <Navbar title="PB-telugu" about="New About"/>
-        <div className="container">
+        <div className="container my-4">
         <TextBar/>
         </div>
     </>
