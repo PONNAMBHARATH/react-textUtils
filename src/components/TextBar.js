@@ -28,6 +28,16 @@ export default function TextBar() {
       setText('');
   }
 
+  let extra=()=>{
+    let newtext = text.split(/[ ]+/).join(" ");
+    setText(newtext);
+  }
+
+  let copy=()=>{
+    var text = document.getElementById("MyBox");
+    text.select();
+    navigator.clipboard.writeText(text.value);
+  }
 
     
 
@@ -35,6 +45,7 @@ export default function TextBar() {
         setText(event.target.value);
     }
 
+    
   return (
     //
     <> 
@@ -48,6 +59,8 @@ export default function TextBar() {
     <button type="button" className="btn btn-info"   onClick={Capitalize}>capitalize</button>
     <button type="button" className="btn btn-secondary mx-1"   onClick={clear}>Clear</button>
     <button type="button" className="btn btn-warning mx-1"   onClick={trim}>Trim</button>
+    <button type="button" className="btn btn-success mx-1"   onClick={extra}>Extra Space Remove</button>
+    <button type="button" className="btn btn-dark mx-1"   onClick={copy}>clipboard</button>
   </div>
 
       <div>
