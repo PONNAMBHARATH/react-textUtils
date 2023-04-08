@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
+//import PropTypes from 'prop-types';
 
-export default function TextBar() {
+export default function TextBar(props) {
     const [text, setText] = useState("Enter the Text");
 
     let UpperCase = ()=>{
@@ -44,7 +45,6 @@ export default function TextBar() {
     let Handle =(event)=>{
         setText(event.target.value);
     }
-
     
   return (
     //
@@ -55,22 +55,21 @@ export default function TextBar() {
       <textarea className="form-control" id="MyBox" rows="10" cols="10" value={text} onChange={Handle} style={{margin:0}}></textarea>
     </div> 
     <button type="button" className="btn btn-primary my-3 mx-1"  onClick={UpperCase}>convert2UpperCase</button>
-    <button type="button" className="btn btn-danger  mx-1" onClick={LowerCase}>convert2LowerCase</button>
+    <button type="button" className="btn btn-danger  mx-1 my-1" onClick={LowerCase}>convert2LowerCase</button>
     <button type="button" className="btn btn-info"   onClick={Capitalize}>capitalize</button>
-    <button type="button" className="btn btn-secondary mx-1"   onClick={clear}>Clear</button>
-    <button type="button" className="btn btn-warning mx-1"   onClick={trim}>Trim</button>
-    <button type="button" className="btn btn-success mx-1"   onClick={extra}>Extra Space Remove</button>
-    <button type="button" className="btn btn-dark mx-1"   onClick={copy}>clipboard</button>
+    <button type="button" className="btn btn-secondary mx-1 my-1"   onClick={clear}>Clear</button>
+    <button type="button" className="btn btn-warning mx-1 my-1"   onClick={trim}>Trim</button>
+    <button type="button" className="btn btn-success mx-1 my-1"   onClick={extra}>Extra Space Remove</button>
+    {/* <button type="button" className="btn btn-dark mx-1"   onClick={copy}>clipboard</button> */}
+    <button type="button" className="btn btn-outline-info mx-1" onClick={copy}>clipboard</button>
   </div>
 
-      <div>
+      <div style={{color:props.mode==='dark'?'light':'dark'}}>
       <h4>No of Character  : {text.length}</h4>
-      <h4>The Length of the words : {text.split(" ").length}</h4>
+      <h4>The Length of the words : {text.trim() === '' ? 0 : text.split(" ").length}</h4>
       <h4>Preview Text</h4>
       {text}
       </div>
-
-
   </>
   )
 }
