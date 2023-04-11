@@ -52,9 +52,9 @@ export default function TextBar(props) {
      <div> 
       <h4>Enter Your Text Below</h4>
     <div className="md-3">
-      <textarea className="form-control" id="MyBox" rows="10" cols="10" value={text} onChange={Handle} style={{margin:0}}></textarea>
+      <textarea className="form-control my-1" id="MyBox" rows="10" cols="10" value={text} onChange={Handle} style={{margin:0}}></textarea>
     </div> 
-    <button type="button" className="btn btn-primary my-3 mx-1"  onClick={UpperCase}>convert2UpperCase</button>
+    <button type="button" className="btn btn-primary my-1 mx-1"  onClick={UpperCase}>convert2UpperCase</button>
     <button type="button" className="btn btn-danger  mx-1 my-1" onClick={LowerCase}>convert2LowerCase</button>
     <button type="button" className="btn btn-info"   onClick={Capitalize}>capitalize</button>
     <button type="button" className="btn btn-secondary mx-1 my-1"   onClick={clear}>Clear</button>
