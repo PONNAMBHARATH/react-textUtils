@@ -31,9 +31,6 @@ function App() {
   }
   return (
     <>
-    {/* <Navbar/>
-    <TextBar/>
-<About/> */}
       <Router>
         <Navbar title="" about="About" mode={mode} toggleMode={toggleMode} />
         <div className="container my-4" mode={mode} toggleMode={toggleMode}>

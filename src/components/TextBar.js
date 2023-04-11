@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-//import PropTypes from 'prop-types';
 
 export default function TextBar(props) {
     const [text, setText] = useState("Enter the Text");
@@ -60,7 +59,6 @@ export default function TextBar(props) {
     <button type="button" className="btn btn-secondary mx-1 my-1"   onClick={clear}>Clear</button>
     <button type="button" className="btn btn-warning mx-1 my-1"   onClick={trim}>Trim</button>
     <button type="button" className="btn btn-success mx-1 my-1"   onClick={extra}>Extra Space Remove</button>
-    {/* <button type="button" className="btn btn-dark mx-1"   onClick={copy}>clipboard</button> */}
     <button type="button" className="btn btn-outline-info mx-1" onClick={copy}>clipboard</button>
   </div>
 

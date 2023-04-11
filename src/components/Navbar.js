@@ -17,15 +17,8 @@ export default function Navbar(props1) {
             <Link className="nav-link active" aria-current="page" to="/">Home</Link>
           </li>
           <li className="nav-item">
-            <Link  className="nav-link" to="/about">{props1.about}</Link>
+            <Link  className="nav-link" to="/about">About</Link>
           </li>
-          {/* <li className="nav-item">
-            <a className="nav-link" href="/">CONTACT</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/">SERVICE</a>
-          </li> */}
-          
         </ul>
 
         <div class={`form-check form-switch text-${props1.mode==='light'?'dark':'light'}`}>
@@ -38,10 +31,6 @@ export default function Navbar(props1) {
   </nav>
   )
 }
-
-// Navbar.propTypes = {
-//     name: PropTypes.string
-//   };
 
 Navbar.propType = 
 {
